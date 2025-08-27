@@ -13,3 +13,11 @@ texture = ExtResource("1_v0iea")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(35.088, 40.254)
 polygon = PackedVector2Array(-43.088, -0.253952, -50.088, -13.254, -81.088, -20.254, -83.088, -45.254, -71.088, -38.254, -45.088, -53.254, -43.088, -77.254, -28.088, -76.254, -24.088, -51.254, -0.0879517, -36.254, 10.912, -44.254, 7.91205, -18.254, -22.088, -13.254, -28.088, -2.25395)
+
+[node name="LaserStartPosition" type="Marker2D" parent="."]
+position = Vector2(0, -44)
+
+[node name="ShootingCooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="ShootingCooldown" to="." method="_on_shooting_cooldown_timeout"]
